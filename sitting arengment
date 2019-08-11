@@ -1,0 +1,30 @@
+https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/seating-arrangement-1/
+----------------------------------------------------------------------------------------------------------------------------------------------
+n=int(input())
+p=list()
+for i in range(n):
+  a=int(input())
+  l=list()
+
+  for i in range(9):
+    if(a>(12*i)):
+      l.append(i)
+    else:
+      pass
+  l=int(l[-1])
+
+#print(info)
+  info=list()
+  info.append((12*(2*l+1)+1)-a)
+  r=a%6
+
+  if(r==0 or r==1):
+    info.append('WS')
+  elif(r==2 or r==5):
+    info.append('MS')
+  elif(r==3 or r==4):
+    info.append('AS')
+  p.append(info)
+#print(p)
+for i in range(len(p)):
+  print(p[i][0],p[i][1])
