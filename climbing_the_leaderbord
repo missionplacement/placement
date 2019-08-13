@@ -1,0 +1,30 @@
+https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
+n1=int(input())
+l=list(map(int,input().split()))
+n2=int(input())
+p=list(map(int,input().split()))
+m=list()
+for i in range(len(p)):
+  l.append(p[i])
+  l=sorted(l)[::-1]
+  t=list()
+  pos=1
+  t.append(pos)
+  for j in range(1,len(l)):
+    if(l[j]<l[j-1]):
+      pos=pos+1
+      t.append(pos)
+    else:
+      t.append(pos)
+  #print(t)
+    
+    
+  #print(l)
+  dic=dict(zip(l,t))
+  m.append(dic[p[i]])
+  l.remove(p[i])
+  #print(l)
+  #print(dic)
+#print(m)
+for i in range(len(m)):
+  print(m[i])
