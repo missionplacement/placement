@@ -1,0 +1,23 @@
+https://practice.geeksforgeeks.org/problems/longest-valid-parentheses/0/?ref=self
+t=int(input())
+p=list()
+for i in range(t):
+  s=input()
+  l=list(s)
+  stk=list()
+  count=0
+  stk.append(-1)
+  for i in range(len(l)):
+    if(l[i]=='('):
+      stk.append(i)
+    else:
+      stk.pop()
+      if(len(stk)!=0):
+        count=max(count,i-stk[len(stk)-1])
+      else:
+        stk.append(i)
+  p.append(count)
+#print(p)  
+for i in range(len(p)):
+  print(p[i])
+  
